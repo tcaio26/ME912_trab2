@@ -1,7 +1,4 @@
 ## code to prepare `salarios` dataset goes here
-library(faux)
-library(GGally)
-library(dplyr)
 salarios = data.frame(id=0,idade=0,anos_estudando=0,filhos=0,salario=0)
 
 set.seed(247005)
@@ -17,5 +14,7 @@ for(i in 1:1000){
 
 salarios = salarios[-1,] %>% cbind(data.frame(rnorm_multi(1000, 2, mu = c(165, 65), sd = c(8, 7), r = 0.6, varnames = c('altura','peso')))) %>%
   dplyr::select(c('id', 'idade', 'altura', 'peso', 'anos_estudando', 'filhos', 'salario'))
+
+salarios = data.frame(salarios, row.names = 'id')
 
 usethis::use_data(salarios, overwrite = TRUE)

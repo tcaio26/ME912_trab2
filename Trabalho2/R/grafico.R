@@ -1,7 +1,26 @@
-library(ggplot2)
-
-graficos <- function(observados, preditos, residuos) {
-# Criar um data frame com observados, preditos e resíduos
+#' @title Gráficos para o modelo de regressão linear
+#'
+#' @description
+#' Gera gráficos de valores preditos contra valores observados e um gráfico de resíduos contra valores observados.
+#'
+#' @usage graficos(modelo)
+#'
+#' @param modelo um objeto gerado pela função regressao
+#'
+#' @return dois gráficos:
+#' \itemize{
+#'  \item \code{preditos_vs_observados} Valores preditos (y) contra valores observados (x)
+#'  \item \code{residuos} Resíduos (y) contra valores observados (x)
+#' }
+#' @import ggplot2
+#' @export
+graficos <- function(modelo) {
+  if(any(names(modelo)!=c("beta_hat","preditos","residuos"))) stop("forneça um modelo gerado pela função 'regressao()'")
+  #extrair os componentes do modelo
+  observados = modelo$preditos + modelo$residuos
+  preditos = modelo$preditos
+  residuos = modelo$residuos
+  # Criar um data frame com observados, preditos e resíduos
   dados <- data.frame(
     Observados = as.vector(observados),
     Preditos = as.vector(preditos),

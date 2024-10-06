@@ -8,14 +8,14 @@
 \subsection{salarios}{
 
 Um data frame com 1000 linhas e 7 colunas:
-\describe{
-\item {id} Número de identificação da pessoa
-\item {idade} Idade da pessoa
-\item {altura} Altura da pessoa
-\item {peso} Peso da pessoa
-\item {anos_estudando} Anos que a pessoa passou estudando (escola, ensino médio, faculdade, etc)
-\item {filhos} Número de filhos
-\item {salario} Salário
+\itemize{
+\item \code{id} Número de identificação da pessoa
+\item \code{idade} Idade da pessoa
+\item \code{altura} Altura da pessoa
+\item \code{peso} Peso da pessoa
+\item \code{anos_estudando} Anos que a pessoa passou estudando (escola, ensino médio, faculdade, etc)
+\item \code{filhos} Número de filhos
+\item \code{salario} Salário
 }
 }
 }

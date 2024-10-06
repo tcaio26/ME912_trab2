@@ -1,3 +1,15 @@
+#' @title Predição para novos valores
+#'
+#' @usage predicao(novos_dados, beta_hat)
+#'
+#' @description
+#' Retorna valores preditos para novas observações, com base no modelo ajustado por \code{regressao}
+#'
+#' @param novos_dados data frame com variaveis identicas às usadas para o ajuste do modelo em \code{regressao}
+#' @param beta_hat coeficientes providenciados por modelo$beta_hat
+#'
+#' @return vetor de valores preditos.
+#' @export
 predicao <- function(novos_dados, beta_hat) {
   # Verificar se 'novos_dados' é um data frame
   if (!is.data.frame(novos_dados)) {

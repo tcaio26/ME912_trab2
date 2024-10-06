@@ -1,4 +1,22 @@
-library(dplyr)
+#' @title Modelo de regressão linear
+#' @description
+#' Ajusta um modelo de regressão linear para o data frame \code{dados} e variável resposta \code{y} fornecidos.
+#'
+#' @usage regressao(dados, y)
+#'
+#' @param dados data frame com apenas variáveis numéricas, incluindo a variável resposta.
+#' @param y nome ou posicção da coluna para ser utilizada como variável resposta.
+#'
+#'
+#' @return Uma lista:
+#' \itemize{
+#'  \item \code{beta_hat} coeficientes beta estimados
+#'  \item \code{preditos} valores preditos para o banco de dados
+#'  \item \code{residuos} residuos do modelo
+#'}
+#'
+#' @import dplyr
+#' @export
 regressao <- function(dados, y){
   dados<- na.omit(dados)
   # Verificar se 'dados' é um data frame

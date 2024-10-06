@@ -62,11 +62,11 @@ novos_valores = data.frame(
     filhos = c(1, 2, 0)
   )
 
-preditos = predicao(novos_valores, betas)
+nova_predicao = predicao(novos_valores, betas)
 ```
 
 ``` r
-head(preditos)
+head(nova_predicao)
 #>       salario
 #> [1,] 18768.45
 #> [2,] 23940.82

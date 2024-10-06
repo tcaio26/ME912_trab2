@@ -28,8 +28,9 @@ regressao <- function(dados, y){
   x <- as.matrix(cbind(1, x))
   y <- as.matrix(select(dados, all_of(y)))
   beta_hat<- solve(t(x) %*% x) %*% t(x) %*% y
-  rownames(beta_hat) <- c("intercepto", colnames(x)[-1])
+  rownames(beta_hat) <- c("(Intercept)", colnames(x)[-1])
   preditos <- x %*% beta_hat
   residuos <- y - preditos
   return(list(beta_hat = beta_hat, preditos = preditos, residuos = residuos))
 }
+

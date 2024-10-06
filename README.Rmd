@@ -29,7 +29,7 @@ Você pode instalar a versão atualizada do pacote em [GitHub](https://github.co
 devtools::install_github("tcaio26/ME912_trab2/Trabalho2")
 ```
 
-## Examplo
+## Exemplo
 
 Esse é um exemplo básico de como você pode resolver um problema de regressão usando o pacote:
 
@@ -63,10 +63,19 @@ preditos = modelo$preditos
 
 Predição para novos valores:
 ```{r}
-novos_valores #data frame com novos valores a serem preditos
+novos_valores = data.frame(
+    idade = c(30, 45, 50),
+    altura = c(175, 180, 165),
+    peso = c(80, 90, 70),
+    anos_estudando = c(12, 16, 14),
+    filhos = c(1, 2, 0)
+  )
 
 preditos = predicao(novos_valores, betas)
 
+```
+```{r}
+head(preditos)
 ```
 
 

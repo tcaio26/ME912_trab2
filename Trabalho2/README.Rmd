@@ -22,11 +22,11 @@ O objetivo do Trabalho 2 é criar um pacote com funções e um banco de dados pa
 
 ## Instalação
 
-Você pode instalar a versão atualizada do pacote em [GitHub](https://github.com/) com:
+Você pode instalar a versão atualizada do pacote em [GitHub](https://github.com/tcaio26/ME912_trab2) com:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("tcaio26/ME912_trab2")
+devtools::install_github("tcaio26/ME912_trab2/Trabalho2")
 ```
 
 ## Examplo

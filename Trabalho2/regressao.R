@@ -15,7 +15,7 @@ regressao <- function(dados, y){
   if (!y %in% colnames(dados)) {
     stop(paste("A variável", y, "não está presente no data frame 'dados'."))
   }
-  x <- select(dados, -y)
+  x <- select(dados, -all_of(y))
   # Verificar se existem preditores
   if (ncol(x) == 0) {
     stop("Não existem variáveis preditoras após remover 'y'.")
@@ -26,14 +26,10 @@ regressao <- function(dados, y){
   }
 
   x <- as.matrix(cbind(1, x))
-  x_transp <- t(x)
   y <- as.matrix(select(dados, all_of(y)))
-  beta_hat<- solve(x_transp %*% x) %*% x_transp %*% y
+  beta_hat<- solve(t(x) %*% x) %*% t(x) %*% y
+  rownames(beta_hat) <- c("intercepto", colnames(x)[-1])
   preditos <- x %*% beta_hat
   residuos <- y - preditos
   return(list(beta_hat = beta_hat, preditos = preditos, residuos = residuos))
 }
-
-
-
-

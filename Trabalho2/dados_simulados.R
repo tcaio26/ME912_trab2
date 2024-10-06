@@ -15,11 +15,11 @@ for(i in 1:1000){
   dados = rbind(dados, c(id, idade, anos_estudando, filhos, salario))
 }
 
-dados = dados[-1,] %>% cbind(data.frame(rnorm_multi(1000, 2, mu = c(165, 65), sd = c(8, 7), r = 0.6, varnames = c('altura','peso')))) %>% 
+dados = dados[-1,] %>% cbind(data.frame(rnorm_multi(1000, 2, mu = c(165, 65), sd = c(8, 7), r = 0.6, varnames = c('altura','peso')))) %>%
   dplyr::select(c('id', 'idade', 'altura', 'peso', 'anos_estudando', 'filhos', 'salario'))
 
 ggpairs(dados[,-1])
 
 lm(salario~., dados) %>% summary()
 
-write.csv(dados, "salarios.csv")
+write.csv(dados, "salarios.csv", row.names = FALSE)

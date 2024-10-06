@@ -40,13 +40,13 @@ library(Trabalho2)
 
 Carregando o banco de dados simulado:
 
-```{r cars}
+```{r}
 data = Trabalho2::salarios
 ```
 
 Aplicando a função `regressao` no banco de dados:
 
-```{r pressure, echo = FALSE}
+```{r}
 modelo = regressao(data, "salario")
 ```
 

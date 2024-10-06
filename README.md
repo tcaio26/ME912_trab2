@@ -37,6 +37,10 @@ data = Trabalho2::salarios
 
 Aplicando a função `regressao` no banco de dados:
 
+``` r
+modelo = regressao(data, "salario")
+```
+
 Saídas do modelo:
 
 ``` r
@@ -81,7 +85,7 @@ Valores preditos vs observados:
 plot$preditos_vs_observados
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
 
 Resíduos:
 
@@ -89,4 +93,4 @@ Resíduos:
 plot$residuos
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
